@@ -54,7 +54,9 @@ final_data = sc.transform(df)
 prediction = model.predict(final_data)
 
 prediction_proba = prediction[0][0]
-print(prediction_proba)
+
+st.write(f"Customer Churn Probability : {np.round(prediction_proba*100,2)}%")
+
 if prediction_proba < 0.5:
     st.write('Customer is not likely to churn')
 else:
